@@ -1,7 +1,7 @@
-Deprecated
+Overview
 ==========
 
-Use of this repository is deprecated. We recommend using the `chef generate repo` command that comes with [ChefDK](http://downloads.chef.io/chef-dk/).
+Use of this chef script is for building LAMP from scratch based on chef-solo for ubuntu servers (supports 12.04 and 14.04). git and chef-solo needs to be installed before running the chef-script
 
 Overview
 ========

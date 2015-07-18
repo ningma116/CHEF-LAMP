@@ -21,38 +21,38 @@ Environment Preparation
 
 1. Clone from GITHUB
 
-cd ~
-git clone https://github.com/ningma116/CHEF-LAMP.git
+`cd ~`
+`git clone https://github.com/ningma116/CHEF-LAMP.git`
 
 2. Rename folder CHEF-LAMP to chef-repo
-mv CHEF-LAMP chef-repo
+`mv CHEF-LAMP chef-repo`
 
 3. Install chef-solo
 
-cd ~
-curl -L https://www.opscode.com/chef/install.sh | bash
-chef-solo -v
+`cd ~`
+`curl -L https://www.opscode.com/chef/install.sh | bash`
+`chef-solo -v`
 
 Build LAMP using our script
 =============
 
 1. Run chef-solo for building up our LAMP
 
-cd chef-repo
-chef-solo -c solo.rb -j web.json
+`cd chef-repo`
+`chef-solo -c solo.rb -j web.json`
 
 2. Running test script to check
 
-./ChefTestScript.sh
+`./ChefTestScript.sh`
 
 Test your LAMP on your browser
 =============
 
 1. Copy test.php file to /var/www/html/
 
-cd chef-repo
-rm /var/www/html/index.html
-cp test.php /var/www/html/
+`cd chef-repo`
+`rm /var/www/html/index.html`
+`cp test.php /var/www/html/`
 
 2. Open a browser and type http://yourhost/test.php
 

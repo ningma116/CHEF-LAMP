@@ -14,16 +14,43 @@ Repository Directories and files
 * `web.json` run list and mysql root password config.
 * `solo.json` cookbook path.
 
-Configuration
+Environment Preparation 
 =============
 
-The repository contains a knife configuration file.
+0. Please "sudo su" before you execute any commands below. 
 
-* .chef/knife.rb
+1. Clone from GITHUB
+cd ~
+git clone https://github.com/ningma116/CHEF-LAMP.git
 
-The knife configuration file `.chef/knife.rb` is a repository specific configuration file for knife. If you're using Hosted Chef, you can download one for your organization from the management console. If you're using the Open Source Chef Server, you can generate a new one with `knife configure`. For more information about configuring Knife, see the Knife documentation.
+2. Rename folder CHEF-LAMP to chef-repo
+mv CHEF-LAMP chef-repo
 
-https://docs.chef.io/knife.html
+3. Install chef-solo
+cd ~
+curl -L https://www.opscode.com/chef/install.sh | bash
+chef-solo -v
+
+Build LAMP using our script
+=============
+
+1. Run chef-solo for building up our LAMP
+cd chef-repo
+chef-solo -c solo.rb -j web.json
+
+2. Running test script to check
+./ChefTestScript.sh
+
+Test your LAMP on your browser
+=============
+
+1. Copy test.php file to /var/www/html/
+cd chef-repo
+rm /var/www/html/index.html
+cp test.php /var/www/html/
+
+2. Open a browser and type http://yourhost/test.php
+
 
 Next Steps
 ==========
